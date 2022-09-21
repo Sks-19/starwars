@@ -10,10 +10,13 @@ const Details = () => {
     <>
       <div className="row">
         <h2 className="card-title my-4" style={{ textAlign: "center" }}>
-          <b>{state.list.name}</b>
+          <b className="text-white">{state.list.name}</b>
         </h2>
         <hr className="text-success"></hr>
-        <div className="col-6 card" style={{ width: "23rem", margin: "auto" }}>
+        <div
+          className="col-6 card"
+          style={{ width: "23rem", margin: "auto", backgroundColor: "#3c3d50" }}
+        >
           <div className="card-body">
             <div className="row p-2" style={{ border: ".5px double gray" }}>
               <p className="card-title text-white">

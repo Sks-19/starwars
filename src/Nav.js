@@ -3,9 +3,7 @@ const Nav = () => {
     <>
       <nav className="navbar-dark p-4">
         <div style={{ textAlign: "center" }}>
-          <span className="px-4 h2 justify-content-center">
-            Star War Characters
-          </span>
+          <span className="px-4 h2 text-white">Star War Characters</span>
         </div>
       </nav>
     </>
