@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Routes, Route } from "react-router-dom";
 import Home from "./Components/Home";
+import Nav from "./Nav";
 import Details from "./Components/Details";
 import "./App.css";
 
@@ -16,6 +17,7 @@ function App() {
   return (
     <>
       <div className="container-fluid">
+        <Nav />
         <Routes>
           <Route
             path="/starwars"

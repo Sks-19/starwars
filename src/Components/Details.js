@@ -8,7 +8,7 @@ const Details = () => {
 
   return (
     <>
-      <div className="row cardBox">
+      <div className="row">
         <h2 className="card-title my-4" style={{ textAlign: "center" }}>
           <b>{state.list.name}</b>
         </h2>

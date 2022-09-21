@@ -57,7 +57,7 @@ const Home = (props) => {
                     <p className="card-text text-dark">
                       Birth Year : {stars.birth_year}
                     </p>
-                    <p className="card-info text-primary">
+                    <p className="card-info text-dark">
                       Gender : {stars.gender}
                     </p>
                   </div>
@@ -67,7 +67,7 @@ const Home = (props) => {
           </>
         );
       })}
-      <div>
+      <div className="py-4">
         <Paginate setStarwarsData={props.setStarwarsData} />
       </div>
     </>

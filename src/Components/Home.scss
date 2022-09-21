@@ -7,7 +7,7 @@
   position: relative;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to right, #62bdff, #3d10bd);
+  background: linear-gradient(to right, #f9e7fe, #dafcfc);
 }
 
 .NavLink {
@@ -69,4 +69,12 @@
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+@media only screen and (max-width: 500px) {
+  .cardDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
