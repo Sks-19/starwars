@@ -1,0 +1,72 @@
+.cardDiv {
+  display: inline-grid;
+  grid-template-columns: auto auto auto;
+}
+
+.myCard {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #62bdff, #3d10bd);
+}
+
+.NavLink {
+  text-decoration: none;
+}
+
+.starIcon {
+  width: 25px;
+  height: 25px;
+}
+
+.container {
+  position: relative;
+  margin-left: 320%;
+  margin-bottom: 60%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  height: 25px;
+  width: 25px;
+  background-color: linear-gradient(to right, #62bdff, #3d10bd);
+}
+
+.container:hover input ~ .checkmark {
+  background-color: linear-gradient(to right, #62bdff, #3d10bd);
+}
+
+.container input:checked ~ .checkmark {
+  background-color: goldenrod;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.container .checkmark:after {
+  width: 5px;
+  height: 10px;
+  border-top-left-radius: solid white;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
