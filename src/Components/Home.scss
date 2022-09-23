@@ -1,6 +1,7 @@
 .cardDiv {
   display: inline-grid;
   grid-template-columns: auto auto auto;
+  margin-left: 20%;
 }
 
 .myCard {
@@ -8,6 +9,10 @@
   justify-content: center;
   align-items: center;
   background: linear-gradient(to right, #f9e7fe, #dafcfc);
+}
+
+.inputChecked {
+  cursor: pointer;
 }
 
 .NavLink {

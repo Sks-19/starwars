@@ -7,13 +7,20 @@ import Details from "./Components/Details";
 import "./App.css";
 
 function App() {
+  let checkedData = [];
   const [starwarsData, setStarwarsData] = useState([]);
 
   useEffect(() => {
     axios
       .get(`https://swapi.dev/api/people/?page=1`)
       .then((res) => setStarwarsData(res.data.results));
+
+    if (!localStorage.getItem("checkedData")) {
+      localStorage.setItem("checkedData", JSON.stringify(checkedData));
+    }
   }, []);
+
+  console.log(starwarsData);
   return (
     <>
       <div className="container-fluid">

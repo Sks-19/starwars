@@ -3,23 +3,44 @@ import { NavLink } from "react-router-dom";
 import Paginate from "./Paginate";
 import { BsStar } from "react-icons/bs";
 import "./Home.scss";
+import { useEffect, useState } from "react";
 
 const Home = (props) => {
+  const [selectedData, setSelectedData] = useState([]);
+
+  useEffect(() => {
+    let get = JSON.parse(localStorage.getItem("checkedData") || []);
+    setSelectedData(get);
+  }, []);
+
   const handleChange = (e) => {
+    setTimeout(() => {
+      let get = JSON.parse(localStorage.getItem("checkedData") || []);
+      setSelectedData(get);
+    }, 500);
+
     const { name, checked } = e.target;
-    let unfavData = props.starwarsData?.map((stars) => {
-      return { ...stars, isChecked: false };
-    });
-    console.log("unfavData", unfavData);
-    console.log(name, checked);
-    let favData = props.starwarsData?.map((stars) =>
-      stars.name === name ? { ...stars, isChecked: checked } : stars
-    );
-    console.log("favData", favData);
+
+    if (checked) {
+      selectedData.push(name);
+      localStorage.setItem("checkedData", JSON.stringify(selectedData));
+    } else {
+      const popped = selectedData.filter((val) => val !== name);
+      localStorage.setItem("checkedData", JSON.stringify(popped));
+    }
   };
+
+  const selected = props.starwarsData?.map((star) => {
+    if (selectedData.includes(star.name)) {
+      return { ...star, isSelected: true };
+    } else {
+      return star;
+    }
+  });
+
   return (
     <>
-      {props.starwarsData?.map((stars) => {
+      {selected?.map((stars) => {
         return (
           <>
             <div className="row cardDiv">
@@ -34,8 +55,10 @@ const Home = (props) => {
                 <div className="p-2">
                   <label className="container">
                     <input
+                      className="inputChecked"
                       type="checkbox"
-                      name={stars.name}
+                      name={stars?.name}
+                      checked={stars?.isSelected || (false && true)}
                       onChange={handleChange}
                     />
                     <BsStar className="starIcon checkmark" />
